@@ -1,0 +1,11 @@
+# Frontend only. Start the backend first (D:\Dishari Backend -> docker compose up).
+# Then here: docker compose up --build   ->   http://localhost:5173
+services:
+  web:
+    build:
+      context: .
+      args:
+        VITE_API_URL: http://localhost:8000
+    ports:
+      - "5173:80"
+    restart: unless-stopped
